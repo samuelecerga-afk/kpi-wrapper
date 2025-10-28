@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <title>KPI Logistica</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0f172a"/>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="KPI Logistica">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-192.png" sizes="192x192">
+  <style>
+    html,body{height:100%;margin:0;background:#0b1220;color:#e5eef8;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial}
+    header{position:sticky;top:0;display:flex;justify-content:space-between;align-items:center;padding:12px;background:#0f172a;color:#fff;z-index:10}
+    .btn{background:#0a84ff;color:#fff;border:0;padding:10px 14px;border-radius:10px;font-weight:800;cursor:pointer}
+    .btn.outline{background:transparent;border:1px solid rgba(255,255,255,.3)}
+    .app{position:fixed;top:56px;bottom:0;left:0;right:0}
+    iframe{width:100%;height:100%;border:0;background:#000}
+  </style>
+</head>
+<body>
+  <header>
+    <div>🚛 KPI Logistica</div>
+    <button id="btn-reload" class="btn outline">Ricarica</button>
+  </header>
+  <div class="app">
+    <!-- 👇 Sostituisci QUI con il tuo URL della web app GAS -->
+    <iframe src="https://script.google.com/macros/s/INSERISCI_IL_TUO_EXEC_URL/exec"></iframe>
+  </div>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./sw.js');
+    }
+    document.getElementById('btn-reload').onclick = () => location.reload();
+  </script>
+</body>
+</html>
